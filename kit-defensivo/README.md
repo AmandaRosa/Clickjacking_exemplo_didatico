@@ -79,7 +79,7 @@ No navegador:
 4. `http://127.0.0.1:5002/teste` — iframe **vazio/bloqueado** = mitigação ok.
 5. Confira headers em Network (mesma checklist).
 
-## Mensagens-chave para os alunos
+## Mensagens-chave
 
 | Abordagem | Serve? | Observação |
 |-----------|--------|------------|
