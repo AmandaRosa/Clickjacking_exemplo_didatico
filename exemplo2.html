@@ -1,0 +1,21 @@
+<!--
+  EXEMPLO DIDÁTICO — clickjacking, passo 2: um elemento invisível
+  (opacity: 0, ver design.css) posicionado sobre o conteúdo do iframe.
+  Use apenas com a vítima local do kit (http://127.0.0.1:8001).
+  Defesa: o site-alvo deve enviar X-Frame-Options / CSP frame-ancestors.
+-->
+<link rel="stylesheet" href="design.css">
+
+<div class="container">
+
+    <iframe
+        src="http://127.0.0.1:8001/vitima.html"
+        class="site-legitimo">
+    </iframe>
+
+    <button class="botao-sobreposto">
+        Clique aqui
+    </button>
+
+</div>
+

@@ -1,0 +1,4 @@
+# Netlify — arquivo _headers na raiz do site publicado
+/*
+  X-Frame-Options: DENY
+  Content-Security-Policy: frame-ancestors 'none'

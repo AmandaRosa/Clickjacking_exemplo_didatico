@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Vítima Flask — {{ modo }}</title>
+  <style>
+    :root {
+      --bg: {{ '#e8f6ec' if protegida else '#f7f3ea' }};
+      --faixa: {{ '#0d6b3a' if protegida else '#8a1c1c' }};
+    }
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      max-width: 40rem;
+      margin: 0 auto;
+      padding: 0 1rem 2rem;
+      background: var(--bg);
+      color: #1a1a1a;
+    }
+    .faixa {
+      margin: 0 -1rem 1.5rem;
+      padding: 0.75rem 1rem;
+      background: var(--faixa);
+      color: #fff;
+      font-size: 0.95rem;
+    }
+    h1 { font-size: 1.5rem; }
+    .acao {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background: #0b5fff;
+      color: #fff;
+      border: 0;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .meta {
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: #444;
+    }
+    code { font-size: 0.85em; }
+  </style>
+</head>
+<body>
+  <div class="faixa">
+    {% if protegida %}
+      PROTEGIDA — headers anti-framing ativos
+      (<code>X-Frame-Options: DENY</code> +
+      <code>CSP frame-ancestors 'none'</code>)
+    {% else %}
+      SEM PROTEÇÃO — esta página pode ser embutida em iframe
+    {% endif %}
+  </div>
+
+  <h1>Área autenticada (Flask)</h1>
+  <p>Conteúdo sensível simulado. Aberta no topo da aba, as duas versões “funcionam”;
+     a diferença aparece só quando alguém tenta embuti-la (veja <code>/teste</code>).</p>
+  <button class="acao" type="button" onclick="alert('Dinheiro transferido')">Adquira seu brinde!</button>
+  <p class="meta">Modo: {{ modo }}</p>
+</body>
+</html>

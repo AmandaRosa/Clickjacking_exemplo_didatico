@@ -1,0 +1,24 @@
+/*
+ * EXEMPLO DIDÁTICO — estilos do exemplo2.html.
+ * opacity: 0 + position: absolute + z-index tornam o botão invisível
+ * e sobreposto ao iframe: a técnica central do clickjacking.
+ */
+
+.container {
+    position: relative;
+}
+
+.site-legitimo {
+    width: 800px;
+    height: 600px;
+}
+
+.botao-sobreposto {
+    position: absolute;
+    opacity: 0;
+    
+    top: 250px;
+    left: 300px;
+
+    z-index: 10;
+}

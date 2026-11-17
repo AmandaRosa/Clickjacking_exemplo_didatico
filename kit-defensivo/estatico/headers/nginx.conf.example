@@ -1,0 +1,9 @@
+# Exemplo: headers anti-clickjacking no Nginx
+# Inclua no server { ... } ou location / { ... }
+
+add_header X-Frame-Options "DENY" always;
+add_header Content-Security-Policy "frame-ancestors 'none'" always;
+
+# Alternativa: permitir apenas o próprio site
+# add_header X-Frame-Options "SAMEORIGIN" always;
+# add_header Content-Security-Policy "frame-ancestors 'self'" always;

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Teste defensivo — tentativa de embutir</title>
+  <style>
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      margin: 1.5rem;
+      background: #fafafa;
+      color: #222;
+    }
+    iframe {
+      width: 100%;
+      max-width: 720px;
+      height: 360px;
+      border: 2px solid #333;
+      background: #fff;
+    }
+    .nota {
+      max-width: 40rem;
+      margin-top: 1rem;
+      font-size: 0.95rem;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <h1>Teste: a vítima pode ser embutida?</h1>
+  <p>
+    Esta página só tenta carregar <code>vitima.html</code> no mesmo origin
+    via iframe — para comparar servidor <strong>sem</strong> vs <strong>com</strong> headers.
+  </p>
+
+  <iframe src="vitima.html" title="Conteúdo da vítima"></iframe>
+
+  <p class="nota">
+    Porta <strong>8001</strong> (sem proteção): o quadro deve mostrar a vítima.<br>
+    Porta <strong>8002</strong> (com proteção): o browser deve bloquear o conteúdo no frame.
+  </p>
+</body>
+</html>

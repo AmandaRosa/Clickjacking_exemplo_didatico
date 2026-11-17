@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Vítima — página sensível (demo)</title>
+  <style>
+    body {
+      font-family: Georgia, "Times New Roman", serif;
+      max-width: 40rem;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      background: #f7f3ea;
+      color: #1a1a1a;
+    }
+    h1 { font-size: 1.5rem; }
+    .acao {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background: #0b5fff;
+      color: #fff;
+      border: 0;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .aviso {
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <h1>Área autenticada (simulada)</h1>
+  <p>Esta página representa um destino sensível (ex.: confirmar ação, transferir, alterar e-mail).</p>
+  <button class="acao" type="button" onclick="alert('Dinheiro transferido')">Adquira seu brinde!</button>
+  <p class="aviso">
+    Em produção, esta página deve enviar headers
+    <code>X-Frame-Options</code> e/ou
+    <code>Content-Security-Policy: frame-ancestors …</code>
+    para não ser embutida por terceiros.
+  </p>
+</body>
+</html>
